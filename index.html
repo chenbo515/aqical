@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="css/cal-heatmap.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>AQI日历</title>
+</head>
+
+<body>
+    <div>
+        <div class="text_center">
+            <h2>中国城市空气质量日历</h2>
+            <h3>全年AQI指数一览表</h3>
+            <div >
+                <span>城市</span>
+                <select id="areas" onChange="redraw()">
+                   
+                </select>
+                <span>年份</span>
+                <select>
+                    <option>2015</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div id="legend" class="legend_container">
+            <div class="legend_container_left">
+                <div class="left_display">
+                    <div class="legend_q1"></div>
+                    <span>优 </span>
+                    <span id="aqiday0"></span>
+                    <span>天</span><br>
+                    <div class="legend_q2"></div>
+                    <span>良 </span>
+                    <span id="aqiday1"></span>
+                    <span>天 </span><br>
+                    <div class="legend_q3"></div>
+                    <span>轻度污染 </span>
+                    <span id="aqiday2"></span>
+                    <span>天 </span>
+                </div>
+            </div>
+            
+            <div class="legend_container_right">
+                <div>
+                    <div class="legend_q4"></div>
+                    <span>中度污染 </span>
+                    <span id="aqiday3"> </span>
+                    <span>天 </span><br>
+                    <div class="legend_q5"></div>
+                    <span>重度污染 </span>
+                    <span id="aqiday4"></span>
+                    <span>天 </span><br>
+                    <div class="legend_q6"></div>
+                    <span>严重污染 </span>
+                    <span id="aqiday5"></span>
+                    <span>天 </span>
+                </div>
+            </div>
+       
+        </div>
+        <div id="cal-heatmap1"></div>
+        <div id="cal-heatmap2"></div>
+    </div>
+    <script type="text/javascript" src="js/d3/d3.min.js"></script>
+    <script type="text/javascript" src="js/cal-heatmap.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

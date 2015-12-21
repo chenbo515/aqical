@@ -1,0 +1,116 @@
+.cal-heatmap-container .q1
+{
+    background-color: #dae289;
+    fill: #00e400;
+}
+
+.cal-heatmap-container .q2
+{
+    background-color: #cedb9c;
+    fill: #ff0
+}
+
+.cal-heatmap-container .q3
+{
+    background-color: #b5cf6b;
+    fill: #ff7e00
+}
+
+.cal-heatmap-container .q4
+{
+    background-color: #637939;
+    fill: #f00
+}
+
+.cal-heatmap-container .q5
+{
+    background-color: #3b6427;
+    fill: #99004c
+}
+.cal-heatmap-container .q6
+{
+    background-color: #3b6427;
+    fill: #7e0023
+}
+
+.legend_container
+{
+    position: absolute;
+    top: 4%;
+    right: 10%;
+}
+
+.legend_container_left
+{
+    position: relative;
+    display: inline-block;
+}
+.legend_container_right
+{
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.left_display
+{
+
+}
+
+.left_display span
+{
+    
+}
+
+.legend_q1
+{
+    display: inline-block;
+    background-color: #00e400;
+    width: 25px;
+    height: 20px;
+}
+
+.legend_q2
+{
+    display: inline-block;
+    background-color: #ff0;
+    width: 25px;
+    height: 20px;
+}
+
+.legend_q3
+{
+    display: inline-block;
+    background-color: #ff7e00;
+    width: 25px;
+    height: 20px;
+}
+
+.legend_q4
+{
+    display: inline-block;
+    background-color: #f00;
+    width: 25px;
+    height: 20px;
+}
+
+.legend_q5
+{
+    display: inline-block;
+    background-color: #99004c;
+    width: 25px;
+    height: 20px;
+}
+
+.legend_q6
+{
+    display: inline-block;
+    background-color: #7e0023;
+    width: 25px;
+    height: 20px;
+}
+
+.text_center
+{
+    text-align: center;
+}
