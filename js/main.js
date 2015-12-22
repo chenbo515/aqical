@@ -31,7 +31,6 @@ jQuery(document).ready(function() {
             return d;
         });
 
-
     redraw();
 });
 
@@ -67,16 +66,16 @@ function cal_aqidays(url) {
 }
 
 function redraw() {
-    var heatmap1 = $("#cal-heatmap1");
-    var heatmap2 = $('#cal-heatmap2');
+    $("#cal-heatmap1").find('svg,div').remove();
+    $('#cal-heatmap2').find('svg,div').remove();
 
-    heatmap1.find('svg,div').remove();
-    heatmap2.find('svg,div').remove();
 
     var area = $('#areas');
     var value = area.val();
     var data_url = "./data/" + value + ".json";
+
     cal_aqidays(data_url);
+
     var shared_conf = {
         domain: "month",
         subDomain: "x_day",
@@ -102,14 +101,44 @@ function redraw() {
         data: data_url,
     };
 
-    var cal1 = new CalHeatMap();
-    shared_conf.itemSelector = "#cal-heatmap1";
-    shared_conf.start = new Date(2015, 0, 1);
-    cal1.init(shared_conf);
+    if (document.body.clientWidth > 1000) {
 
-    var cal2 = new CalHeatMap();
-    shared_conf.itemSelector = "#cal-heatmap2";
-    shared_conf.start = new Date(2015, 6, 1);
-    cal2.init(shared_conf);
+        var cal1 = new CalHeatMap();
+        shared_conf.itemSelector = "#cal-heatmap1";
+        shared_conf.start = new Date(2015, 0, 1);
+        cal1.init(shared_conf);
+
+        var cal2 = new CalHeatMap();
+        shared_conf.itemSelector = "#cal-heatmap2";
+        shared_conf.start = new Date(2015, 6, 1);
+        cal2.init(shared_conf);
+    } else {
+
+        $("#cal-heatmap3").find('svg,div').remove();
+        $("#cal-heatmap4").find('svg,div').remove();
+
+        shared_conf.range = 3;
+        shared_conf.cellSize = 30;
+
+        var cal1 = new CalHeatMap();
+        shared_conf.itemSelector = "#cal-heatmap1";
+        shared_conf.start = new Date(2015, 0, 1);
+        cal1.init(shared_conf);
+
+        var cal2 = new CalHeatMap();
+        shared_conf.itemSelector = "#cal-heatmap2";
+        shared_conf.start = new Date(2015, 3, 1);
+        cal2.init(shared_conf);
+
+        var cal3 = new CalHeatMap();
+        shared_conf.itemSelector = "#cal-heatmap3";
+        shared_conf.start = new Date(2015, 6, 1);
+        cal3.init(shared_conf);
+
+        var cal4 = new CalHeatMap();
+        shared_conf.itemSelector = "#cal-heatmap4";
+        shared_conf.start = new Date(2015, 9, 1);
+        cal4.init(shared_conf);
+    }
 
 }

@@ -54,12 +54,8 @@
 
 .left_display
 {
-
-}
-
-.left_display span
-{
-    
+    height: 20px;
+    line-height: 20px;
 }
 
 .legend_q1
@@ -68,6 +64,7 @@
     background-color: #00e400;
     width: 25px;
     height: 20px;
+    margin-bottom: 10px;
 }
 
 .legend_q2
@@ -76,6 +73,7 @@
     background-color: #ff0;
     width: 25px;
     height: 20px;
+    margin-bottom: 10px;
 }
 
 .legend_q3
@@ -84,6 +82,7 @@
     background-color: #ff7e00;
     width: 25px;
     height: 20px;
+    margin-bottom: 10px;
 }
 
 .legend_q4
@@ -92,6 +91,7 @@
     background-color: #f00;
     width: 25px;
     height: 20px;
+    margin-bottom: 10px;
 }
 
 .legend_q5
@@ -100,6 +100,7 @@
     background-color: #99004c;
     width: 25px;
     height: 20px;
+    margin-bottom: 10px;
 }
 
 .legend_q6
@@ -108,9 +109,44 @@
     background-color: #7e0023;
     width: 25px;
     height: 20px;
+    margin-bottom: 10px;
 }
 
 .text_center
 {
     text-align: center;
+}
+
+.cal-heatmap-container .subdomain-text
+{
+    fill: black;
+}
+
+@media screen and (max-width: 1000px) {
+    .text_center
+    {
+        position: relative;
+        left: 50px;
+        text-align: left;
+    }
+
+    .cal-heatmap-container .subdomain-text
+    {
+        fill: black;
+    }
+    
+    #wapper
+    {
+        width: 800px;
+    }
+
+    .legend_container
+    {
+        left: 400px;
+    }
+
+    body
+    {
+        width: 800px;
+    }
 }
