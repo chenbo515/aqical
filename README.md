@@ -1,3 +1,5 @@
 # aqical
+
 中国城市空气质量日历
-demo: aqical.sinaapp.com
+
+[演示地址](http://aqical.sinaapp.com)
