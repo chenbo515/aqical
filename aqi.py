@@ -34,24 +34,22 @@ def get_citys():
 
 
 citys = get_citys()
-c=Counter(citys)
+c = Counter(citys)
 print(c)
 print("共有{0}个城市".format(len(citys)), citys)
 f = open("citys.txt", 'w')
 for city in citys:
-    print("<option value=\"{0}\">{0}</option>".format(city),file=f)
-    # aqi_data = {}
-    # executor = ThreadPoolExecutor(max_workers=12)
-    # futures = {executor.submit(
-    # get_month_data, city, "2015-{0:02d}".format(x + 1)): x for x in
-    # range(12)}
+    aqi_data = {}
+    executor = ThreadPoolExecutor(max_workers=12)
+    futures = {executor.submit(
+        get_month_data, city, "2015-{0:02d}".format(x + 1)): x for x in range(12)}
 
-    # for future in as_completed(futures):
-    #     try:
-    #         aqi_data.update(future.result())
-    #     except Exception as e:
-    #         print("!!!出现错误!!!", e)
+    for future in as_completed(futures):
+        try:
+            aqi_data.update(future.result())
+        except Exception as e:
+            print("!!!出现错误!!!", e)
 
-    # json.dump(aqi_data, open("{0}.json".format(
-    #     city), 'w'), indent=2, sort_keys=True)
-    # print("------保存 {0}.json 成功------".format(city))
+    json.dump(aqi_data, open("{0}.json".format(
+        city), 'w'), indent=2, sort_keys=True)
+    print("------保存 {0}.json 成功------".format(city))
